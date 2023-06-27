@@ -1,11 +1,12 @@
 from fastai.vision.all import *
 import streamlit as st
 import pathlib
+import platform
 import plotly.express as px
 from PIL import Image
 
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+plt=platform.system()
+if plt=='Linux': pathlib.WindowsPath = pathlib.PosixPath
 
 st.title('Fruit Images Classification Model')
 st.markdown('You can upload  or take picture of  these fruit only: Apple, pineapple, pear, grape, lemon, mango, banana and strawberry')
