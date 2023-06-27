@@ -14,7 +14,7 @@ st.text('Do you agree?')
 check=st.checkbox('I agree')
 
 def model_result(image):
-    fruit_model=load_learner('D:\\DL_model\\fruits\\venvx\\fruit_classification_model.pkl')
+    fruit_model=load_learner('fruit_classification_model.pkl')
     predict,pred_id,probability=fruit_model.predict(image)
     st.image(image,caption=predict)
     st.success(f"Fruit: {predict}")
